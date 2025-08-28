@@ -301,6 +301,9 @@ public class UCrop {
         public static final String EXTRA_UCROP_WIDGET_COLOR_TOOLBAR = EXTRA_PREFIX + ".UcropToolbarWidgetColor";
         public static final String EXTRA_UCROP_TITLE_TEXT_TOOLBAR = EXTRA_PREFIX + ".UcropToolbarTitleText";
         public static final String EXTRA_UCROP_TEXT_ORIGINAL = EXTRA_PREFIX + ".UcropOriginalText";
+        public static final String EXTRA_UCROP_TEXT_CROP = EXTRA_PREFIX + ".UcropCropText";
+        public static final String EXTRA_UCROP_TEXT_ROTATE = EXTRA_PREFIX + ".UcropRotateText";
+        public static final String EXTRA_UCROP_TEXT_SCALE = EXTRA_PREFIX + ".UcropScaleText";
         public static final String EXTRA_UCROP_WIDGET_CANCEL_DRAWABLE = EXTRA_PREFIX + ".UcropToolbarCancelDrawable";
         public static final String EXTRA_UCROP_WIDGET_CROP_DRAWABLE = EXTRA_PREFIX + ".UcropToolbarCropDrawable";
 
@@ -500,6 +503,27 @@ public class UCrop {
          */
         public void setOriginalText(@Nullable String text) {
             mOptionBundle.putString(EXTRA_UCROP_TEXT_ORIGINAL, text);
+        }
+
+        /**
+         * @param text - desired text for Crop
+         */
+        public void setBottomCropText(@Nullable String text) {
+            mOptionBundle.putString(EXTRA_UCROP_TEXT_CROP, text);
+        }
+
+        /**
+         * @param text - desired text for Rotate
+         */
+        public void setBottomRotateText(@Nullable String text) {
+            mOptionBundle.putString(EXTRA_UCROP_TEXT_ROTATE, text);
+        }
+
+        /**
+         * @param text - desired text for Scale
+         */
+        public void setBottomScaleText(@Nullable String text) {
+            mOptionBundle.putString(EXTRA_UCROP_TEXT_SCALE, text);
         }
 
         /**

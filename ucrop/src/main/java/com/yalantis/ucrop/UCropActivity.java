@@ -87,6 +87,9 @@ public class UCropActivity extends AppCompatActivity {
 
     private String mToolbarTitle;
     private String mOriginalText;
+    private String mBottomCropText;
+    private String mBottomRotateText;
+    private String mBottomScaleText;
 
     // Enables dynamic coloring
     private int mToolbarColor;
@@ -313,6 +316,12 @@ public class UCropActivity extends AppCompatActivity {
         mToolbarTitle = mToolbarTitle != null ? mToolbarTitle : getResources().getString(R.string.ucrop_label_edit_photo);
         mOriginalText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_TEXT_ORIGINAL);
         mOriginalText = mOriginalText != null ? mOriginalText : getResources().getString(R.string.ucrop_label_original);
+        mBottomCropText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_TEXT_CROP);
+        mBottomCropText = mBottomCropText != null ? mBottomCropText : getResources().getString(R.string.ucrop_crop);
+        mBottomRotateText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_TEXT_ROTATE);
+        mBottomRotateText = mBottomRotateText != null ? mBottomRotateText : getResources().getString(R.string.ucrop_rotate);
+        mBottomScaleText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_TEXT_SCALE);
+        mBottomScaleText = mBottomScaleText != null ? mBottomScaleText : getResources().getString(R.string.ucrop_scale);
         mLogoColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_LOGO_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_default_logo));
         mShowBottomControls = !intent.getBooleanExtra(UCrop.Options.EXTRA_HIDE_BOTTOM_CONTROLS, false);
         mRootViewBackgroundColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_crop_background));
@@ -340,6 +349,13 @@ public class UCropActivity extends AppCompatActivity {
             mLayoutAspectRatio = findViewById(R.id.layout_aspect_ratio);
             mLayoutRotate = findViewById(R.id.layout_rotate_wheel);
             mLayoutScale = findViewById(R.id.layout_scale_wheel);
+
+            TextView tvScale = mWrapperStateScale.findViewById(R.id.text_view_scale);
+            TextView tvCrop = mWrapperStateAspectRatio.findViewById(R.id.text_view_crop);
+            TextView tvRotate = mWrapperStateRotate.findViewById(R.id.text_view_rotate);
+            tvScale.setText(mBottomScaleText);
+            tvCrop.setText(mBottomCropText);
+            tvRotate.setText(mBottomRotateText);
 
             View controlsWrapper = findViewById(R.id.controls_wrapper);
             int wrapperStatesHeight = getResources().getDimensionPixelSize(R.dimen.ucrop_height_wrapper_states);
