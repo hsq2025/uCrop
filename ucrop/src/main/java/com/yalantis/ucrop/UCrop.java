@@ -300,6 +300,7 @@ public class UCrop {
 
         public static final String EXTRA_UCROP_WIDGET_COLOR_TOOLBAR = EXTRA_PREFIX + ".UcropToolbarWidgetColor";
         public static final String EXTRA_UCROP_TITLE_TEXT_TOOLBAR = EXTRA_PREFIX + ".UcropToolbarTitleText";
+        public static final String EXTRA_UCROP_TEXT_ORIGINAL = EXTRA_PREFIX + ".UcropOriginalText";
         public static final String EXTRA_UCROP_WIDGET_CANCEL_DRAWABLE = EXTRA_PREFIX + ".UcropToolbarCancelDrawable";
         public static final String EXTRA_UCROP_WIDGET_CROP_DRAWABLE = EXTRA_PREFIX + ".UcropToolbarCropDrawable";
 
@@ -492,6 +493,13 @@ public class UCrop {
          */
         public void setToolbarTitle(@Nullable String text) {
             mOptionBundle.putString(EXTRA_UCROP_TITLE_TEXT_TOOLBAR, text);
+        }
+
+        /**
+         * @param text - desired text for Original
+         */
+        public void setOriginalText(@Nullable String text) {
+            mOptionBundle.putString(EXTRA_UCROP_TEXT_ORIGINAL, text);
         }
 
         /**
